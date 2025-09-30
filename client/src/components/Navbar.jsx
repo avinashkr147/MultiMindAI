@@ -17,7 +17,7 @@ function Navbar() {
         {
           user ? <UserButton />
             : (
-              <button onClick={openSignIn} className='flex items-center gap-2 rounded-2xl text-[10px] cursor-pointer bg-primary text-white px-1 py-1   sm:px-3 sm:py-2.5'>Get Started <ArrowRight className='w-1 h-1 sm:w-4 sm:h-4' /></button>
+              <button onClick={openSignIn} className='flex items-center gap-2 rounded-2xl text-[10px] cursor-pointer bg-primary text-white px-1 py-1   sm:px-3 sm:py-2.5'>SignIn <ArrowRight className='w-1 h-1 sm:w-4 sm:h-4' /></button>
 
             ) 
         }

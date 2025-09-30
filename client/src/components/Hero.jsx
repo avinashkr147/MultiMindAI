@@ -1,7 +1,11 @@
 import React from 'react'
 import user_group from "../assets/user_group.png";
+import { useClerk,useUser} from '@clerk/clerk-react'
 
 function Hero() {
+const { openSignIn } = useClerk()
+const {user} = useUser()
+
     return (
         <div className='px-4 sm:px-20 xl:px-32 relative inline-flex flex-col w-full justify-center bg-[url(/gradientBackground.png)] bg-cover bg-no-repeat min-h-screen'>
 
@@ -18,7 +22,12 @@ function Hero() {
             <div className='flex items-center gap-4 mt-8 mx-auto text-gray-600'>
                 <img src={user_group} alt='' className='h-8'/> Trusted by 5k+ people
             </div>
-
+            <div className='w-full mt-6 '>
+            {
+            user ? "":
+             <button onClick={openSignIn} className=' flex items-center justify-center text-center m-auto w-[200px]  text-2xl  rounded-xl  cursor-pointer bg-primary text-white px-2 py-2  sm:px-4 sm:py-4 '>Get Started</button>
+            }
+            </div>
         </div>
     )
 }
