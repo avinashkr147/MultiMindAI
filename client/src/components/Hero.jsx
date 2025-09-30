@@ -9,7 +9,7 @@ const {user} = useUser()
 
 const handleScrollDown = () => {
   window.scrollTo({
-    top: window.scrollY + 500,  // scroll down 500px
+    top: window.scrollY + 600,  // scroll down 500px
     behavior: "smooth",
   });
   
