@@ -1,10 +1,19 @@
 import React from 'react'
 import user_group from "../assets/user_group.png";
 import { useClerk,useUser} from '@clerk/clerk-react'
+import { ArrowDown } from 'lucide-react'
 
 function Hero() {
 const { openSignIn } = useClerk()
 const {user} = useUser()
+
+const handleScrollDown = () => {
+  window.scrollTo({
+    top: window.scrollY + 500,  // scroll down 500px
+    behavior: "smooth",
+  });
+  
+};
 
     return (
         <div className='px-4 sm:px-20 xl:px-32 relative inline-flex flex-col w-full justify-center bg-[url(/gradientBackground.png)] bg-cover bg-no-repeat min-h-screen'>
@@ -24,7 +33,7 @@ const {user} = useUser()
             </div>
             <div className='w-full mt-6 '>
             {
-            user ? "":
+            user ? <button onClick={handleScrollDown}  className=' flex items-center justify-center text-center m-auto w-[200px]  text-2xl  rounded-xl  cursor-pointer bg-primary text-white px-2 py-2  sm:px-4 sm:py-4 '>Scroll <h1 className='ml-3 mt-1 animate-bounce'>< ArrowDown/></h1></button> :
              <button onClick={openSignIn} className=' flex items-center justify-center text-center m-auto w-[200px]  text-2xl  rounded-xl  cursor-pointer bg-primary text-white px-2 py-2  sm:px-4 sm:py-4 '>Get Started</button>
             }
             </div>
